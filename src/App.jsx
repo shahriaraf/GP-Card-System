@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Navbar></Navbar>
       <Routes>
-        <Route path="/হোম" element={<Home></Home>} />
+        <Route path="/Home" element={<Home></Home>} />
         <Route path="/লগইন" element={<Login></Login>} />
         <Route path="/নিবন্ধন" element={<Register></Register>} />
         {/* Add more routes as needed */}
