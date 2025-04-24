@@ -14,9 +14,10 @@ function App() {
     <Router>
       <Navbar></Navbar>
       <Routes>
+      <Route path="/" element={<Home></Home>} />
         <Route path="/Home" element={<Home></Home>} />
-        <Route path="/লগইন" element={<Login></Login>} />
-        <Route path="/নিবন্ধন" element={<Register></Register>} />
+        <Route path="/Login" element={<Login></Login>} />
+        <Route path="/Register" element={<Register></Register>} />
         {/* Add more routes as needed */}
         {/* <Route path="/about" element={<About />} /> */}
         {/* <Route path="/login" element={<Login />} /> */}

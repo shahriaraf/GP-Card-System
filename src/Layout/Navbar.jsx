@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const navLinks = ["Home", "লগইন", "নিবন্ধন", "ডিসকাউন্ট পয়েন্ট"];
+  const navLinks = ["Home", "Login", "Register", "Discount"];
 
   useEffect(() => {
     const handleScroll = () => {
