@@ -14,10 +14,10 @@ const SearchBar = () => {
   return (
     <div className="bg-gray-50 pt-20 pb-30 relative">
       <div className="p-10 bg-gray-100 max-w-6xl m-auto rounded-2xl">
-        <h1 className="text-5xl text-center font-semibold mb-4 text-gray-900">
+        <h1 className="text-3xl md:text-5xl text-center font-semibold mb-4 text-gray-900">
           Search For Your Offer
         </h1>
-        <p className="text-center text-xl font-semibold mb-10 text-gray-700">
+        <p className="text-center text-lg md:text-xl font-semibold mb-10 text-gray-700">
           Recharge your prepaid account or pay bill of your postpaid account here.
         </p>
 
