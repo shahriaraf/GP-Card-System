@@ -35,7 +35,7 @@ const SearchBar = () => {
           />
           <button
             type="submit"
-            className="bg-gradient-to-r from-[#84cdee] via-[#20ADF8] to-[#20ADF8] text-white px-6 py-3 rounded-full flex items-center gap-1"
+            className="bg-gradient-to-r from-[#84cdee] via-[#20ADF8] to-[#20ADF8] hover:bg-[#20ADF8] text-white px-6 py-3 rounded-full flex items-center gap-1"
           >
             <Search className="w-5 h-5" />
             <span className="hidden sm:inline text-lg">Search</span>

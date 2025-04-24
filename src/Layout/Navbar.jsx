@@ -31,7 +31,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <a
               key={link}
-              href={`#${link.toLowerCase()}`}
+              href={`/${link.toLowerCase()}`}
               className={`text-md font-medium transition ${
                 scrolled ? "text-gray-800 hover:text-[#20ADF8]" : "text-gray-800 hover:text-[#20ADF8]"
               }`}
