@@ -30,7 +30,7 @@ const SearchBar = () => {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by name..."
+            placeholder="আপনার নাম খুজুন..."
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#20ADF8]"
           />
           <button

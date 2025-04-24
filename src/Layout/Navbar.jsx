@@ -55,7 +55,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <a
               key={link}
-              href={`#${link.toLowerCase()}`}
+              href={`/${link.toLowerCase()}`}
               className="block text-gray-700 font-medium hover:text-[#20ADF8] transition"
               onClick={() => setIsOpen(false)}
             >
