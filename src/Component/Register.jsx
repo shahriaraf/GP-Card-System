@@ -1,5 +1,3 @@
-
-
 const Register = () => {
   return (
     <div className="min-h-screen flex">
@@ -17,62 +15,59 @@ const Register = () => {
       </div>
 
       {/* Right Section */}
-      <div className="w-full md:w-1/2 mt-30 md:mt-0 bg-gray-50 flex flex-col py-6 justify-center px-12">
+      <div className="w-full md:w-1/2 bg-gray-50 flex flex-col py-6 justify-center px-6 sm:px-12 overflow-y-auto">
         <h2 className="text-3xl font-bold mb-2 text-gray-800">Register</h2>
         <p className="text-sm text-gray-500 mb-6">
-          Create a new account to continue.
+          Fill in the details to create an account.
         </p>
 
-        {/* Full Name */}
-        <div className="mb-4">
-          <label className="block mb-1 text-gray-600 text-sm">
-            Full Name *
-          </label>
-          <input
-            type="text"
-            placeholder="John Doe"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-[#20ADF8]"
-          />
-        </div>
+        <form className="space-y-4">
 
-        {/* Mobile Number/Email */}
-        <div className="mb-4">
-          <label className="block mb-1 text-gray-600 text-sm">
-            Mobile Number/Email *
-          </label>
-          <input
-            type="text"
-            placeholder="01xxxxxxxxx or user@website.com"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-[#20ADF8]"
-          />
-        </div>
+          {/* Full Name */}
+          <InputField label="Full Name *" type="text" placeholder="John Doe" />
 
-        {/* Password */}
-        <div className="mb-4">
-          <label className="block mb-1 text-gray-600 text-sm">Password *</label>
-          <input
-            type="password"
-            placeholder="********"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-[#20ADF8]"
-          />
-        </div>
+          {/* Date of Birth and NID */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <InputField label="Date of Birth *" type="date" />
+            <InputField label="NID Number *" type="text" placeholder="1234567890" />
+          </div>
 
-        {/* Confirm Password */}
-        <div className="mb-6">
-          <label className="block mb-1 text-gray-600 text-sm">
-            Confirm Password *
-          </label>
-          <input
-            type="password"
-            placeholder="********"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-[#20ADF8]"
-          />
-        </div>
+          {/* Email & Mobile */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <InputField label="Email *" type="email" placeholder="user@example.com" />
+            <InputField label="Mobile Number *" type="text" placeholder="01XXXXXXXXX" />
+          </div>
 
-        {/* Button */}
-        <button className="w-full bg-gradient-to-r from-[#84cdee] via-[#20ADF8] to-[#20ADF8] text-white font-semibold py-2 rounded-full cursor-not-allowed">
-          Register
-        </button>
+          {/* Address Block: Division, Zila, Upozila */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <InputField label="Division *" placeholder="Dhaka" />
+            <InputField label="Zila *" placeholder="Gazipur" />
+            <InputField label="Upozila *" placeholder="Kaliakair" />
+          </div>
+
+          {/* Union, Ward, Job ID */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <InputField label="Union *" placeholder="Boali" />
+            <InputField label="Ward *" placeholder="Ward No. 3" />
+            <InputField label="Job ID *" placeholder="JOB-12345" />
+          </div>
+
+          {/* Upload Picture */}
+          <div>
+            <label className="block mb-1 text-gray-600 text-sm">Upload Photo *</label>
+            <input
+              type="file"
+              accept="image/*"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-[#20ADF8]"
+            />
+          </div>
+
+          {/* Submit */}
+          <button className="w-full bg-gradient-to-r from-[#84cdee] via-[#20ADF8] to-[#20ADF8] text-white font-semibold py-2 rounded-full hover:opacity-90 transition">
+            Submit
+          </button>
+        </form>
+
 
         {/* Footer Links */}
         <div className="mt-8 text-sm text-gray-500 text-center space-x-4">
@@ -88,5 +83,17 @@ const Register = () => {
     </div>
   );
 };
+
+// Reusable input field component
+const InputField = ({ label, type = "text", placeholder }) => (
+  <div>
+    <label className="block mb-1 text-gray-600 text-sm">{label}</label>
+    <input
+      type={type}
+      placeholder={placeholder}
+      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-[#20ADF8]"
+    />
+  </div>
+);
 
 export default Register;

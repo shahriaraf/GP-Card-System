@@ -32,7 +32,7 @@ const Navbar = () => {
             <a
               key={link}
               href={`/${link.toLowerCase()}`}
-              className={`text-md font-medium transition ${
+              className={`text-lg font-medium transition ${
                 scrolled ? "text-gray-800 hover:text-[#20ADF8]" : "text-gray-800 hover:text-[#20ADF8]"
               }`}
             >

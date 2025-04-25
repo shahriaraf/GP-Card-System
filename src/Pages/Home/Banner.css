@@ -1,0 +1,22 @@
+/* Banner.css */
+
+/* Make Swiper arrows smaller on mobile */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #20ADF8; /* Tailwind's gray-800 */
+  transition: transform 0.2s;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    transform: scale(0.5);
+  }
+}
