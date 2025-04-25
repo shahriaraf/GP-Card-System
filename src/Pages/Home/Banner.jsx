@@ -3,36 +3,34 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import './Banner.css'; // For custom swiper arrows
+import './Banner.css';
 import { useLayoutEffect } from 'react';
 import gsap from 'gsap';
 
 const slides = [
   {
-    title: "Welcome to MyApp",
-    subtitle: "Discover something awesome!",
+    title: "Welcome to GP Card",
+    subtitle: `Experience the future of digital convenience with GP Card. Manage, shop, and explore seamlessly all in one place.`,
+    image: "https://i.ibb.co.com/p64Hc6Hm/grameen-add.png",
   },
   {
-    title: "Explore Our Projects",
-    subtitle: "See what we've built",
+    title: "Explore Our Services",
+    subtitle: `From mobile recharges to exclusive deals, discover everything GP Card has to offer.`,
+    image: "https://i.ibb.co.com/LjK0T5s/109-Tk-1060x764.webp",
   },
   {
     title: "Join the Community",
-    subtitle: "Connect with like-minded people",
-  },
-  {
-    title: "Let's Build Together",
-    subtitle: "Start your journey now",
+    subtitle: `Be part of a growing network of smart users. Share, connect, and unlock exclusive benefits.`,
+    image: "https://i.ibb.co.com/67TKhFRq/0c89ff110711549-Y3-Jvc-Cwx-NDAw-LDEw-OTUs-MCww.png",
   },
 ];
 
 const Banner = () => {
-
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".img",
-        { y: 20 },
+        { y: 10 },
         {
           y: 0,
           duration: 0.7,
@@ -43,26 +41,21 @@ const Banner = () => {
       );
     });
 
-    return () => ctx.revert(); // correctly placed revert
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div className="bg-gradient-to-tr from-gray-50 via-[#edf7fc] to-[#84cdee] pt-20 md:pt-24">
-      
-      {/* Top Section with Animated Image */}
-      <div className="flex items-center gap-4 md:gap-10 pl-6 sm:pl-20 bg-sky-200">
-        <img
-          src="https://i.ibb.co.com/rRJf2Z7p/atm-card-removebg-preview.png"
-          alt="ATM Card"
-          className="h-[150px] md:h-[230px] img object-contain"
-        />
-        <h1 className="text-xl sm:text-4xl font-semibold text-gray-800 leading-snug">
-          Unlock your card to experience...
-        </h1>
-      </div>
+    <div className="bg-gradient-to-tr from-gray-50 via-[#bee9ff] to-[#3fc1fd] pt-20 md:pt-24 relative overflow-hidden">
 
-      {/* Swiper Slider */}
-      <div className="h-[60vh] sm:h-[50vh] md:h-[60vh]">
+      {/* Floating Animated Image */}
+      <img
+        src="https://i.ibb.co.com/rRJf2Z7p/atm-card-removebg-preview.png"
+        alt="ATM Card"
+        className="img object-contain drop-shadow-lg absolute mt-5 md:mt-0 top-6 left-4 sm:top-10 sm:left-10 h-20 sm:h-28 md:h-36 lg:h-48 z-10"
+      />
+
+      {/* Swiper Section */}
+      <div className="h-auto min-h-[80vh] flex items-center">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -73,18 +66,35 @@ const Banner = () => {
           navigation={true}
           pagination={{ clickable: true }}
           modules={[Autoplay, Pagination, Navigation]}
-          className="h-full swiper-custom-nav"
+          className="w-full swiper-custom-nav"
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="w-full h-full flex items-center justify-center px-4 sm:px-8">
-                <div className="text-center max-w-2xl">
-                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 font-bold mb-4 leading-snug">
+              <div className="w-full px-4 sm:px-8 py-8 md:pt-20 flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 lg:gap-16 max-w-[1400px] mx-auto">
+                
+                {/* Text Content */}
+                <div className="text-center lg:text-left max-w-xl">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
                     {slide.title}
                   </h1>
                   <p className="text-base sm:text-lg md:text-xl text-gray-700">
                     {slide.subtitle}
                   </p>
+                  <button className="px-6 py-3 mt-6 rounded-full font-semibold text-gray-700 bg-gradient-to-r from-[#84cdee] via-[#20ADF8] to-[#20ADF8] hover:scale-105 transition-all duration-300">
+                    Join Now
+                  </button>
+                </div>
+
+                {/* Image Content */}
+                <div className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px]">
+                  <div className="rounded-full bg-[#47bbfa] flex items-center justify-center p-4 shadow-xl">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      loading="eager"
+                      className="w-full object-cover rounded-full drop-shadow-xl"
+                    />
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
