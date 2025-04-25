@@ -32,7 +32,7 @@ const Banner = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".img",
-        { y: 30 },
+        { y: 20 },
         {
           y: 0,
           duration: 0.7,
@@ -50,14 +50,14 @@ const Banner = () => {
     <div className="bg-gradient-to-tr from-gray-50 via-[#edf7fc] to-[#84cdee] pt-20 md:pt-24">
       
       {/* Top Section with Animated Image */}
-      <div className="flex items-center gap-10 pl-6 sm:pl-20 bg-sky-200">
+      <div className="flex items-center gap-4 md:gap-10 pl-6 sm:pl-20 bg-sky-200">
         <img
           src="https://i.ibb.co.com/rRJf2Z7p/atm-card-removebg-preview.png"
           alt="ATM Card"
-          className="h-[230px] img object-contain"
+          className="h-[150px] md:h-[230px] img object-contain"
         />
-        <h1 className="text-2xl sm:text-4xl font-semibold text-gray-800 leading-snug">
-          Unlock your card to experience <br /> the power of card
+        <h1 className="text-xl sm:text-4xl font-semibold text-gray-800 leading-snug">
+          Unlock your card to experience...
         </h1>
       </div>
 

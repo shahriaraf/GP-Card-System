@@ -15,7 +15,7 @@ const Register = () => {
       </div>
 
       {/* Right Section */}
-      <div className="w-full md:w-1/2 bg-gray-50 flex flex-col py-6 justify-center px-6 sm:px-12 overflow-y-auto">
+      <div className="w-full md:w-1/2 bg-gray-50 flex flex-col py-25 justify-center px-6 sm:px-12 overflow-y-auto">
         <h2 className="text-3xl font-bold mb-2 text-gray-800">Register</h2>
         <p className="text-sm text-gray-500 mb-6">
           Fill in the details to create an account.
