@@ -80,13 +80,10 @@ const Banner = () => {
                   <p className="text-base sm:text-lg md:text-xl text-gray-700">
                     {slide.subtitle}
                   </p>
-                  <button className="px-6 py-3 mt-6 rounded-full font-semibold text-gray-700 bg-gradient-to-r from-[#84cdee] via-[#20ADF8] to-[#20ADF8] hover:scale-105 transition-all duration-300">
-                    Join Now
-                  </button>
                 </div>
 
                 {/* Image Content */}
-                <div className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px]">
+                <div className="w-full max-w-[350px] sm:max-w-[450px] md:max-w-[500px] lg:max-w-[550px]">
                   <div className="rounded-full bg-[#47bbfa] flex items-center justify-center p-4 shadow-xl">
                     <img
                       src={slide.image}

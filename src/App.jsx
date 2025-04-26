@@ -5,6 +5,7 @@ import './App.css'
 import Register from './Component/Register';
 import Navbar from './Layout/Navbar';
 import DiscountTable from './Component/DiscountTable';
+import UserDashboard from './Component/Dashboard/UserDashboard';
 
 // Add other page imports here
 // import About from './Pages/About/About';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Login></Login>} />
         <Route path="/register" element={<Register></Register>} />
         <Route path="/discount" element={<DiscountTable></DiscountTable>} />
+        <Route path="/user-dashboard" element={<UserDashboard></UserDashboard>} />
         {/* Add more routes as needed */}
         {/* <Route path="/about" element={<About />} /> */}
         {/* <Route path="/login" element={<Login />} /> */}
