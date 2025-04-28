@@ -6,6 +6,9 @@ import Register from './Component/Register';
 import Navbar from './Layout/Navbar';
 import DiscountTable from './Component/DiscountTable';
 import UserDashboard from './Component/Dashboard/UserDashboard';
+import MemberRegistration from './Component/MemberRegistration';
+import CardList from './Component/CardList';
+import AddMoney from './Component/AddMoney';
 
 // Add other page imports here
 // import About from './Pages/About/About';
@@ -22,6 +25,9 @@ function App() {
         <Route path="/register" element={<Register></Register>} />
         <Route path="/discount" element={<DiscountTable></DiscountTable>} />
         <Route path="/user-dashboard" element={<UserDashboard></UserDashboard>} />
+        <Route path="/card-registration" element={<MemberRegistration></MemberRegistration>} />
+        <Route path="/card-list" element={<CardList></CardList>} />
+        <Route path="/add-money" element={<AddMoney></AddMoney>} />
         {/* Add more routes as needed */}
         {/* <Route path="/about" element={<About />} /> */}
         {/* <Route path="/login" element={<Login />} /> */}
