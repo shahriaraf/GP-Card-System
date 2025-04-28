@@ -1,21 +1,25 @@
-import { FaMoneyBillWave, FaMobileAlt, FaUniversity, FaRegFileAlt, FaShoppingCart, FaUserShield, FaUmbrellaBeach, FaGraduationCap, FaPhoneAlt } from 'react-icons/fa';
-import { SiPayoneer } from 'react-icons/si';
-import { MdOutlineCreditCard, MdAttachMoney } from 'react-icons/md';
-
-const services = [
-  { icon: <FaMoneyBillWave className="text-blue-500 text-4xl" />, title: "Transfer" },
-  { icon: <FaRegFileAlt className="text-purple-500 text-4xl" />, title: "Utility" },
-  { icon: <FaMobileAlt className="text-green-500 text-4xl" />, title: "Recharge" },
-  { icon: <MdAttachMoney className="text-pink-500 text-4xl" />, title: "MFS" },
-  { icon: <SiPayoneer className="text-black text-4xl" />, title: "Payoneer" },
-  { icon: <MdOutlineCreditCard className="text-purple-500 text-4xl" />, title: "Card Services" },
-  { icon: <FaUserShield className="text-green-500 text-4xl" />, title: "A/C Services" },
-  { icon: <FaUmbrellaBeach className="text-purple-500 text-4xl" />, title: "Insurance Pay" },
-  { icon: <FaUniversity className="text-purple-500 text-4xl" />, title: "Govt. Fee" },
-  { icon: <FaGraduationCap className="text-blue-500 text-4xl" />, title: "Tuition Fee" },
-  { icon: <FaShoppingCart className="text-purple-500 text-4xl" />, title: "e-Commerce" },
-  { icon: <FaPhoneAlt className="text-orange-500 text-4xl" />, title: "Contact Center" },
-];
+import { 
+    FaIdCard, FaClipboardList, FaMoneyBillWave, FaUsers, 
+    FaUserShield, FaUserCog, FaUser, FaCogs, 
+    FaGlobe, FaSignOutAlt, FaMoneyCheckAlt
+  } from 'react-icons/fa';
+  import { FaBangladeshiTakaSign } from "react-icons/fa6";
+  
+  const services = [
+    { icon: <FaIdCard className="text-blue-500 text-4xl" />, title: "Card Registration" },
+    { icon: <FaClipboardList className="text-black text-4xl" />, title: "Card List" },
+    { icon: <FaBangladeshiTakaSign className="text-green-700 text-4xl" />, title: "Add Money" },
+    { icon: <FaMoneyBillWave className="text-green-700 text-4xl" />, title: "Transaction Information" },
+    { icon: <FaMoneyCheckAlt className="text-green-700 text-4xl" />, title: "Balance Transfer" },
+    { icon: <FaUsers className="text-blue-700 text-4xl" />, title: "My Team" },
+    { icon: <FaUserShield className="text-emerald-500 text-4xl" />, title: "Report" },
+    { icon: <FaUserCog className="text-blue-700 text-4xl" />, title: "User Manage" },
+    { icon: <FaUser className="text-blue-700 text-4xl" />, title: "My Profile" },
+    { icon: <FaCogs className="text-gray-500 text-4xl" />, title: "Settings" },
+    { icon: <FaGlobe className="text-sky-500 text-4xl" />, title: "Web Settings" },
+    { icon: <FaSignOutAlt className="text-red-600 text-4xl" />, title: "Log Out" },
+  ];
+  
 
 const UserDashboard = () => {
   return (
