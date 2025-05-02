@@ -1,13 +1,9 @@
-import { useState } from "react";
+
+import DateOfBirth from "./DateOfBirth";
+import CardDetails from "./CardDetails";
 
 
 const CardApplication = () => {
-
-       const [selectedCard, setSelectedCard] = useState("");
-    
-      const handleCardChange = (cardType) => {
-        setSelectedCard(cardType); // Set selected card to the clicked one
-      };
 
 
     return (
@@ -49,10 +45,7 @@ const CardApplication = () => {
 
                     {/* DOB, NID No, Mobile No */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div>
-                            <label className="block mb-1 text-gray-600 text-sm">Date of Birth <span className="text-red-500">*</span></label>
-                            <input type="date" className="w-full px-4 py-2 border border-gray-300 rounded-md" />
-                        </div>
+                        <DateOfBirth></DateOfBirth>
                         <div>
                             <label className="block mb-1 text-gray-600 text-sm">NID Number <span className="text-red-500">*</span></label>
                             <input type="text" placeholder="1234567890" className="w-full px-4 py-2 border border-gray-300 rounded-md" />
@@ -106,6 +99,8 @@ const CardApplication = () => {
                         <input type="file" accept="image/*" className="w-full px-4 py-2 border border-gray-300 rounded-md" />
                     </div>
 
+                    <CardDetails></CardDetails>
+
                     {/* Other Member Information */}
                     <div className="mt-8">
                         <h3 className="text-xl font-bold mb-4 text-gray-800">Other Member Information</h3>
@@ -139,66 +134,6 @@ const CardApplication = () => {
                                     <option>Other</option>
                                 </select>
                             </div>
-                        </div>
-                    </div>
-
-                    {/* Card Details */}
-                    <div className="mt-8">
-                        <h3 className="text-xl font-bold mb-4 text-gray-800">Card Details</h3>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div className="mb-4">
-                                <label className="block mb-1 text-gray-600 text-sm">Card No <span className="text-red-500">*</span></label>
-                                <input type="text" placeholder="Card Number" className="w-full px-4 py-2 border border-gray-300 rounded-md" />
-                            </div>
-                            <div className="mb-4">
-                                <label className="block mb-1 text-gray-600 text-sm">Fee <span className="text-red-500">*</span></label>
-                                <input type="text" placeholder="Fee Amount" className="w-full px-4 py-2 border border-gray-300 rounded-md" />
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div className="mb-4">
-                                <label className="block mb-2 text-gray-600 text-sm">Expired Date <span className="text-red-500">*</span></label>
-                                <input type="date" className="w-full px-4 py-2 border border-gray-300 rounded-md" />
-                            </div>
-                            {/* Select Card - checkbox but only one selectable */}
-                            <div className="mb-4">
-                                <label className="block mb-2 text-gray-600 text-sm">Select Card <span className="text-red-500">*</span></label>
-                                <div className="flex gap-6 mt-2">
-                                    {["Gold Card", "Silver Card", "Platinum Card"].map((card) => (
-                                        <label
-                                            key={card}
-                                            className={`flex items-center gap-2 ${selectedCard === card ? "text-[#20ADF8] font-bold" : "text-gray-900"} ${selectedCard !== "" && selectedCard !== card ? "opacity-50 cursor-not-allowed" : ""}`}
-                                        >
-                                            <input
-                                                type="checkbox"
-                                                checked={selectedCard === card}
-                                                onChange={() => handleCardChange(card)}
-                                                disabled={selectedCard !== "" && selectedCard !== card} // Disable other cards when one is selected
-                                                className="text-[#20ADF8]"
-                                            />
-                                            {card}
-                                        </label>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div className="mb-4">
-                                <label className="block mb-2 text-gray-600 text-sm">Verifier's ID No <span className="text-red-500">*</span></label>
-                                <input type="text" placeholder="Verifier ID" className="w-full px-4 py-2 border border-gray-300 rounded-md" />
-                            </div>
-                            <div className="mb-4">
-                                <label className="block mb-2 text-gray-600 text-sm">Verifier's Name <span className="text-red-500">*</span></label>
-                                <input type="text" placeholder="Verifier Name" className="w-full px-4 py-2 border border-gray-300 rounded-md" />
-                            </div>
-                        </div>
-
-                        <div className="mb-4">
-                            <label className="block mb-2 text-gray-600 text-sm">Verifier's Number <span className="text-red-500">*</span></label>
-                            <input type="text" placeholder="Verifier's Number" className="w-full px-4 py-2 border border-gray-300 rounded-md" />
                         </div>
                     </div>
 
