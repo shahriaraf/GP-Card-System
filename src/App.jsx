@@ -9,6 +9,7 @@ import UserDashboard from './Component/Dashboard/UserDashboard';
 import MemberRegistration from './Component/MemberRegistration';
 import CardList from './Component/CardList';
 import AddMoney from './Component/AddMoney';
+import CardApplication from './Component/CardApplication';
 
 // Add other page imports here
 // import About from './Pages/About/About';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<Login></Login>} />
         <Route path="/register" element={<Register></Register>} />
         <Route path="/discount" element={<DiscountTable></DiscountTable>} />
+        <Route path="/card application" element={<CardApplication></CardApplication>} />
         <Route path="/user-dashboard" element={<UserDashboard></UserDashboard>} />
         <Route path="/card-registration" element={<MemberRegistration></MemberRegistration>} />
         <Route path="/card-list" element={<CardList></CardList>} />

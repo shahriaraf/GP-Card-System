@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const navLinks = ["Home", "Login", "Register", "Discount"];
+  const navLinks = ["Home", "Login", "Register", "Discount", "Card Application"];
 
   useEffect(() => {
     const handleScroll = () => {
