@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const transactions = [
   {
@@ -36,11 +36,33 @@ const transactions = [
 ];
 
 const Transaction = () => {
+  const [filter, setFilter] = useState('All');
+
+  const filteredTransactions =
+    filter === 'All' ? transactions : transactions.filter((tx) => tx.type === filter);
+
   return (
     <div className="w-full pt-30 px-4 sm:px-6 lg:px-12 py-10 bg-gradient-to-tr from-gray-50 via-[#edf7fc] to-[#d8efff]">
       <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-gray-800">
         Transaction History
       </h2>
+
+      {/* Filter Buttons */}
+      <div className="flex justify-center gap-4 mb-6">
+        {['All', 'Cash In', 'Cash Out'].map((type) => (
+          <button
+            key={type}
+            onClick={() => setFilter(type)}
+            className={`px-4 py-2 rounded-full border transition font-medium ${
+              filter === type
+                ? 'bg-[#20ADF8] text-white border-[#20ADF8]'
+                : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-100'
+            }`}
+          >
+            {type}
+          </button>
+        ))}
+      </div>
 
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="w-full overflow-x-auto">
@@ -56,7 +78,7 @@ const Transaction = () => {
               </tr>
             </thead>
             <tbody>
-              {transactions.map((tx, idx) => (
+              {filteredTransactions.map((tx, idx) => (
                 <tr
                   key={tx.id}
                   className="border-t border-gray-200 hover:bg-gray-50 transition"
@@ -71,6 +93,13 @@ const Transaction = () => {
                   <td className="px-4 py-3">{tx.time}</td>
                 </tr>
               ))}
+              {filteredTransactions.length === 0 && (
+                <tr>
+                  <td colSpan="6" className="px-4 py-6 text-center text-gray-500">
+                    No transactions found.
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
@@ -80,3 +109,4 @@ const Transaction = () => {
 };
 
 export default Transaction;
+

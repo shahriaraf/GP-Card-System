@@ -1,4 +1,4 @@
-const demoUsers = [
+const UserData = [
     {
       nameEnglish: "Khaled Ahmed",
       nameBengali: "খালেদ আহমেদ",
@@ -61,5 +61,5 @@ const demoUsers = [
     }
   ];
   
-  export default demoUsers;
+  export default UserData;
   

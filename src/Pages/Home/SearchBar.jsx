@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Search, X } from "lucide-react";
-import demoUsers from "../../Data/UserData"; // update path if needed
+import UserData from "../../Data/UserData"; // update path if needed
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
   const [selectedUser, setSelectedUser] = useState(null);
 
-  const filteredUsers = demoUsers.filter((user) =>
+  const filteredUsers = UserData.filter((user) =>
     user.nameEnglish.toLowerCase().includes(search.toLowerCase()) ||
     user.nameBengali.includes(search)
   );

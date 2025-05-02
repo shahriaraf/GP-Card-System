@@ -2,8 +2,40 @@ import DateOfBirth from "./DateOfBirth";
 import CardDetails from "./CardDetails";
 import Swal from "sweetalert2";
 import { useRef } from "react";
+import { useParams } from "react-router-dom";
 
-const CardRegistration = () => {
+const UpdateCard = () => {
+
+    const { id } = useParams();  // Get the card ID from the URL params
+
+// You could fetch this data from an API or have it preloaded.
+const cardData = [
+  {
+    id: 1,
+    name: 'Khaled Ahmed',
+    number: '01723984765',
+    date: '2025-04-20',
+    status: 'Pending',
+  },
+  {
+    id: 2,
+    name: 'Nusrat Jahan',
+    number: '01392874564',
+    date: '2025-04-21',
+    status: 'Completed',
+  },
+  {
+    id: 3,
+    name: 'Tanvir Ahmed',
+    number: '01726537487',
+    date: '2025-04-22',
+    status: 'Pending',
+  },
+];
+
+const card = cardData.find((card) => card.id === parseInt(id));  // Find the card by ID
+
+
 
 
   const formRef = useRef(null);
@@ -12,7 +44,7 @@ const CardRegistration = () => {
   const showConfirmationModal = () => {
     Swal.fire({
       title: 'Confirm Submission',
-      text: 'Are you sure all the details are correct before finalizing?',
+      text: 'Are you sure all the details are correct before updating?',
       icon: 'question',
       showCancelButton: true,
       confirmButtonText: 'Yes, Confirm',
@@ -22,7 +54,7 @@ const CardRegistration = () => {
         formRef.current.reset();
         Swal.fire(
           'Submitted!',
-          'Your information has been successfully submitted.',
+          'Your information has been successfully updated.',
           'success'
         );
         
@@ -30,7 +62,7 @@ const CardRegistration = () => {
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           'Cancelled',
-          'Submission has been cancelled. You can review your data again.',
+          'Update has been cancelled. You can review your data again.',
           'info'
         );
       }
@@ -62,8 +94,8 @@ const CardRegistration = () => {
 
       {/* Right Section */}
       <div className="w-full md:w-3/5 bg-gray-50 flex flex-col py-25 justify-center px-6 sm:px-12 overflow-y-auto">
-        <h2 className="text-3xl font-bold mb-2 text-gray-800">Card Registration</h2>
-        <p className="text-sm text-gray-500 mb-6">Fill in the details to register a new cardholder.</p>
+        <h2 className="text-3xl font-bold mb-2 text-gray-800">Update {card.name}'s Details</h2>
+        <p className="text-sm text-gray-500 mb-6">Fill in the details to update your data.</p>
 
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
           {/* Name and Father's Name */}
@@ -241,4 +273,4 @@ const CardRegistration = () => {
   );
 };
 
-export default CardRegistration;
+export default UpdateCard;

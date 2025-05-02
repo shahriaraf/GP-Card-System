@@ -1,29 +1,31 @@
 import { ArrowRightCircle } from 'lucide-react';
-
-
+import { Link } from 'react-router-dom';
 
 const CardList = () => {
   const cardData = [
     {
-      name: 'Shoumo Araf',
-      number: 'GP-1001',
+      id: 1,  // Add an `id` for each card to use in the route
+      name: 'Khaled Ahmed',
+      number: '01723984765',
       date: '2025-04-20',
       status: 'Pending',
-      pic: 'https://i.pravatar.cc/40?img=1',
+      pic: 'https://i.ibb.co.com/kVPVkMtz/passport-2.jpg',
     },
     {
-      name: 'Anika Rahman',
-      number: 'GP-1002',
+      id: 2,
+      name: 'Nusrat Jahan',
+      number: '01392874564',
       date: '2025-04-21',
       status: 'Completed',
-      pic: 'https://i.pravatar.cc/40?img=2',
+      pic: 'https://i.ibb.co.com/C5t5RfKf/passport-1.webp',
     },
     {
-      name: 'Tanvir Hasan',
-      number: 'GP-1003',
+      id: 3,
+      name: 'Tanvir Ahmed',
+      number: '01726537487',
       date: '2025-04-22',
       status: 'Pending',
-      pic: 'https://i.pravatar.cc/40?img=3',
+      pic: 'https://i.ibb.co.com/bhBwk3S/passport-4.jpg',
     },
   ];
 
@@ -73,9 +75,10 @@ const CardList = () => {
                     </span>
                   </td>
                   <td className="px-4 py-3 text-center">
-                    <button className="text-blue-600 hover:text-blue-800">
+                    {/* Link to the card details page */}
+                    <Link to={`/card/${card.id}`} className="text-blue-600 hover:text-blue-800">
                       <ArrowRightCircle size={20} />
-                    </button>
+                    </Link>
                   </td>
                 </tr>
               ))}

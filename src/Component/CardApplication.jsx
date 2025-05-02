@@ -1,9 +1,48 @@
 
 import DateOfBirth from "./DateOfBirth";
 import CardDetails from "./CardDetails";
+import { useRef } from "react";
+import Swal from "sweetalert2";
 
 
 const CardApplication = () => {
+
+      const formRef = useRef(null);
+    
+      // Function to show SweetAlert2 modal
+      const showConfirmationModal = () => {
+        Swal.fire({
+          title: 'Confirm Submission',
+          text: 'Are you sure all the details are correct before finalizing?',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonText: 'Yes, Confirm',
+          cancelButtonText: 'No, Cancel',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            formRef.current.reset();
+            Swal.fire(
+              'Submitted!',
+              'Your information has been successfully submitted.',
+              'success'
+            );
+            
+            // Handle form submission here, such as sending data to an API
+          } else if (result.dismiss === Swal.DismissReason.cancel) {
+            Swal.fire(
+              'Cancelled',
+              'Submission has been cancelled. You can review your data again.',
+              'info'
+            );
+          }
+        });
+      };
+    
+      // Handle form submission
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        showConfirmationModal(); // Show confirmation modal when the user submits the form
+      };
 
 
     return (
@@ -26,7 +65,7 @@ const CardApplication = () => {
                 <h2 className="text-3xl font-bold mb-2 text-gray-800">Card Application</h2>
                 <p className="text-sm text-gray-500 mb-6">Fill in the details to register a new cardholder.</p>
 
-                <form className="space-y-4">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                     {/* Name, Father's Name, Mother's Name */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div>
@@ -73,12 +112,20 @@ const CardApplication = () => {
                         </div>
                         <div>
                             <label className="block mb-1 text-gray-600 text-sm">Gender <span className="text-red-500">*</span></label>
-                            <select className="w-full px-4 py-2 border border-gray-300 rounded-md">
-                                <option value="">Select Gender</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Other</option>
-                            </select>
+                            <div className="flex gap-4 mt-2">
+                                <label className="flex items-center gap-2">
+                                    <input type="radio" name="gender" value="Male" className="text-[#20ADF8]" />
+                                    Male
+                                </label>
+                                <label className="flex items-center gap-2">
+                                    <input type="radio" name="gender" value="Female" className="text-[#20ADF8]" />
+                                    Female
+                                </label>
+                                <label className="flex items-center gap-2">
+                                    <input type="radio" name="gender" value="Other" className="text-[#20ADF8]" />
+                                    Other
+                                </label>
+                            </div>
                         </div>
                         <div>
                             <label className="block mb-1 text-gray-600 text-sm">Religion <span className="text-red-500">*</span></label>
