@@ -13,6 +13,7 @@ import CardRegistration from './Component/CardRegistration';
 import Transaction from './Component/Transaction';
 import UserDetails from './Component/UserDetails';
 import UpdateCard from './Component/UpdateCard';
+import UserManagement from './Component/UserManagement';
 
 // Add other page imports here
 // import About from './Pages/About/About';
@@ -33,6 +34,7 @@ function App() {
         <Route path="/card-registration" element={<CardRegistration></CardRegistration>} />
         <Route path="/card-list" element={<CardList></CardList>} />
         <Route path="/add-money" element={<AddMoney></AddMoney>} />
+        <Route path="/user-manage" element={<UserManagement></UserManagement>} />
         <Route path="/transaction-information" element={<Transaction></Transaction>} />
         <Route path="/card/:id" element={<UserDetails></UserDetails>} />
         <Route path="/update/:id" element={<UpdateCard></UpdateCard>} />
